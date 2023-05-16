@@ -11,7 +11,7 @@
     },
     "scripts": {
         "build": "yarn clean && yarn generate && NODE_ENV=production yarn tsc --project tsconfig.prd.json",
-        "build:start": "yarn clean && yarn generate && NODE_ENV=production yarn tsc --project tsconfig.prd.json && yarn ts-node --transpileOnly build/src/index",
+        "build:start": "yarn build && NODE_ENV=production TS_NODE_BASEURL=./build node -r tsconfig-paths/register build/src",
         "clean": "rimraf ./build ./generated",
         "format": "yarn prettier --write . --ignore-path .gitignore",
         "generate": "tsoa -c tsoaConfig.json spec-and-routes",
