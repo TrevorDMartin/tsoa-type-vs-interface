@@ -1,0 +1,15 @@
+{
+    "watch": ["src", "package.json", "nodemon.json"],
+    "ignore": ["node_modules", "test"],
+    "ext": "ts,mjs,js,json",
+    "exec": "yarn clean && yarn generate && yarn ts-node --transpileOnly src/index.ts",
+    "legacyWatch": true,
+    "verbose": false,
+    "env": {
+        "LOGGER_LEVEL": "info",
+        "LOGGER_PRINT_PRETTY_ENABLED": false,
+        "NODE_ENV": "development",
+        "OAUTH_COOKIE_SECRETS": "password",
+        "CORS_EXTRA_DOMAINS": "http://localhost:3000"
+    }
+}
