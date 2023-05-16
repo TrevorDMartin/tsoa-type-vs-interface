@@ -2,15 +2,7 @@
     "env": {
         "node": true
     },
-    "ignorePatterns": [
-        "**/*.cjs",
-        "build/",
-        "coverage/",
-        "generated",
-        "node_modules/",
-        "scripts/build.js",
-        "public"
-    ],
+    "ignorePatterns": ["**/*.cjs", "build/", "generated", "node_modules/"],
     "plugins": ["@typescript-eslint", "import"],
     "overrides": [
         {

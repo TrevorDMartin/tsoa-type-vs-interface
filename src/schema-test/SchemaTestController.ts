@@ -1,4 +1,3 @@
-import { HttpStatusCode } from "@src/utility/HttpStatusCode";
 import { Controller, Get, Route } from "tsoa";
 import { ComplexSchemaType, complexTestObject } from "./ComplexTypes";
 import { SimpleSchemaType, simpleTestObject } from "./SimpleTypes";

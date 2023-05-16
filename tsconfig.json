@@ -18,7 +18,7 @@
         "removeComments": true,
         "resolveJsonModule": true
     },
-    "include": ["src", "test", "jest.config.ts"],
+    "include": ["src"],
     "exclude": ["node_modules"],
     "watchOptions": {
         "excludeDirectories": ["**/node_modules", "build", "public"]
