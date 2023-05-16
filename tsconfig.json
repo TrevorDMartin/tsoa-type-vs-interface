@@ -1,0 +1,29 @@
+{
+    "extends": "@tsconfig/node18/tsconfig.json",
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "allowJs": false,
+        "sourceMap": true,
+        "alwaysStrict": true,
+        "baseUrl": "./",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noImplicitAny": true,
+        "noEmit": true,
+        "paths": {
+            "@generated/*": ["generated/*"],
+            "@src/*": ["src/*"],
+            "@test/*": ["test/*"]
+        },
+        "removeComments": true,
+        "resolveJsonModule": true
+    },
+    "include": ["src", "test", "jest.config.ts"],
+    "exclude": ["node_modules"],
+    "watchOptions": {
+        "excludeDirectories": ["**/node_modules", "build", "public"]
+    },
+    "ts-node": {
+        "require": ["tsconfig-paths/register"]
+    }
+}

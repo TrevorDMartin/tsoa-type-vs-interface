@@ -1,0 +1,71 @@
+{
+    "env": {
+        "node": true
+    },
+    "ignorePatterns": [
+        "**/*.cjs",
+        "build/",
+        "coverage/",
+        "generated",
+        "node_modules/",
+        "scripts/build.js",
+        "public"
+    ],
+    "plugins": ["@typescript-eslint", "import"],
+    "overrides": [
+        {
+            "extends": [
+                // This is the recommend ordering based off of
+                // - https://www.npmjs.com/package/@typescript-eslint/eslint-plugin
+                // - https://typescript-eslint.io/docs/linting/configs/#eslint-recommended
+                // - https://prettier.io/docs/en/install.html
+                "eslint:recommended",
+                "plugin:@typescript-eslint/eslint-recommended",
+                "plugin:@typescript-eslint/recommended",
+                "plugin:@typescript-eslint/recommended-requiring-type-checking",
+                "plugin:@typescript-eslint/strict",
+                "plugin:import/recommended",
+                "plugin:import/typescript",
+                "prettier"
+            ],
+            "files": ["*.ts", "*.tsx"], // Your TypeScript files extension
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "allowImportExportEverywhere": true,
+                "project": "./tsconfig.json",
+                "tsconfigRootDir": "./"
+            },
+            "rules": {
+                "import/group-exports": "warn",
+                "import/no-default-export": "error",
+                "import/no-named-as-default-member": "off",
+                "import/no-unresolved": "error",
+                "nonblock-statement-body-position": "error",
+                "@typescript-eslint/consistent-type-exports": "warn",
+                "@typescript-eslint/consistent-type-imports": "warn"
+            },
+            "settings": {
+                "import/resolver": {
+                    "typescript": {
+                        "alwaysTryTypes": true
+                    },
+                    "node": true
+                }
+            }
+        }
+    ],
+    "root": true,
+    "rules": {
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "d.ts": "never",
+                "tsx": "never"
+            }
+        ]
+    }
+}

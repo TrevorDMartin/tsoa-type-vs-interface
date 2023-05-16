@@ -1,0 +1,47 @@
+{
+    "name": "tsoa-type-vs-interface",
+    "license": "UNLICENSED",
+    "author": {
+        "name": "Trevor Martin"
+    },
+    "main": "build",
+    "engines": {
+        "node": ">=18.15.0",
+        "npm": ">=9.5.0"
+    },
+    "scripts": {
+        "build": "yarn clean && yarn generate && NODE_ENV=production yarn tsc --project tsconfig.prd.json",
+        "clean": "rimraf ./build ./generated",
+        "format": "yarn prettier --write . --ignore-path .gitignore",
+        "generate": "tsoa -c tsoaConfig.json spec-and-routes",
+        "lint": "yarn lint:ci --fix",
+        "lint:ci": "tsc && yarn eslint --ignore-path .gitignore ./",
+        "start": "nodemon",
+        "style": "yarn format && yarn lint"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.0",
+        "boxen": "^5.1.2",
+        "detect-port": "^1.4.0",
+        "express": "^4.18.1",
+        "swagger-ui-express": "^4.6.3",
+        "tsoa": "^5.1.1"
+    },
+    "devDependencies": {
+        "@tsconfig/node18": "^2.0.0",
+        "@types/detect-port": "^1.3.2",
+        "@types/express": "^4.17.13",
+        "@types/node": "^18.15.0",
+        "@types/swagger-ui-express": "^4.1.3",
+        "@typescript-eslint/eslint-plugin": "^5.34.0",
+        "@typescript-eslint/parser": "^5.34.0",
+        "eslint": "^8.22.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-import-resolver-typescript": "^3.5.5",
+        "eslint-plugin-import": "^2.26.0",
+        "nodemon": "^2.0.22",
+        "prettier": "2.8.8",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.0.4"
+    }
+}
